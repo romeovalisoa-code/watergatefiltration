@@ -355,17 +355,16 @@
         }
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 24px;
         }
         .gallery-item {
             overflow: hidden;
             border-radius: 24px;
-            height: 220px;
-            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            height: 250px;
+            background: var(--gray-light);
             box-shadow: var(--shadow);
             transition: var(--transition);
-            position: relative;
         }
         .gallery-item img {
             width: 100%;
@@ -375,26 +374,6 @@
         }
         .gallery-item:hover img {
             transform: scale(1.05);
-        }
-        .gallery-placeholder {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            color: white;
-            font-weight: bold;
-            text-align: center;
-            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
-            z-index: 1;
-        }
-        .gallery-item img {
-            position: relative;
-            z-index: 2;
         }
         .quote-form {
             background: var(--gray-light);
@@ -522,6 +501,9 @@
                 margin-left: 0;
                 margin-top: 10px;
             }
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
         }
         .map {
             border-radius: 24px;
@@ -530,42 +512,6 @@
         }
         [data-translate] {
             transition: opacity 0.2s ease;
-        }
-        
-        /* Style pour les images */
-        .img-placeholder {
-            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--light-blue) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-            min-height: 300px;
-            color: white;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-align: center;
-            flex-direction: column;
-        }
-        .hero-placeholder {
-            min-height: 400px;
-            border-radius: 32px;
-        }
-        .hero-image .img-placeholder {
-            border-radius: 32px;
-        }
-        .gallery-item {
-            position: relative;
-        }
-        .gallery-item .img-placeholder {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-        }
-        .gallery-item img {
-            position: relative;
-            z-index: 2;
         }
     </style>
 </head>
@@ -624,13 +570,7 @@
                     </div>
                 </div>
                 <div class="hero-image" data-aos="fade-left">
-                    <!-- Image hero-systeme.jpg à la racine -->
-                    <img src="hero-systeme.jpg" alt="Système de filtration professionnel" style="display:none;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="img-placeholder hero-placeholder" style="display:flex;">
-                        <i class="fas fa-water" style="font-size: 4rem; margin-bottom: 15px;"></i>
-                        <span>SYSTÈME DE FILTRATION<br>PROFESSIONNEL</span>
-                        <span style="font-size: 0.8rem; margin-top: 15px;">📸 hero-systeme.jpg</span>
-                    </div>
+                    <img src="hero-systeme.jpg" alt="Système de filtration professionnel">
                 </div>
             </div>
             <div class="features-grid">
@@ -688,40 +628,20 @@
         <div class="container">
             <h2 class="section-title" data-translate="gallery_title">Galerie</h2>
             <div class="gallery-grid">
-                <!-- Galerie image 1 - installation.jpg -->
                 <div class="gallery-item">
-                    <img src="installation.jpg" alt="Installation système filtration" style="display:none;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="img-placeholder" style="display:flex;">
-                        <i class="fas fa-tools" style="font-size: 3rem; margin-bottom: 10px;"></i>
-                        <span>Installation</span>
-                        <span style="font-size: 0.7rem;">📸 installation.jpg</span>
+                    <img src="installation.jpg" alt="Installation système filtration">
+                </div>
+                <div class="gallery-item">
+                    <img src="equipements.jpg" alt="Équipements modernes de traitement d'eau">
+                </div>
+                <div class="gallery-item">
+                    <div style="background: linear-gradient(135deg, #005792, #00A8E8); width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold;">
+                        <i class="fas fa-wrench" style="font-size: 3rem; margin-right: 10px;"></i> Intervention technique
                     </div>
                 </div>
-                <!-- Galerie image 2 - equipements.jpg -->
                 <div class="gallery-item">
-                    <img src="equipements.jpg" alt="Équipements modernes" style="display:none;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="img-placeholder" style="display:flex;">
-                        <i class="fas fa-microchip" style="font-size: 3rem; margin-bottom: 10px;"></i>
-                        <span>Équipements</span>
-                        <span style="font-size: 0.7rem;">📸 equipements.jpg</span>
-                    </div>
-                </div>
-                <!-- Galerie image 3 - à ajouter plus tard -->
-                <div class="gallery-item">
-                    <img src="" alt="Intervention technique" style="display:none;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="img-placeholder" style="display:flex;">
-                        <i class="fas fa-wrench" style="font-size: 3rem; margin-bottom: 10px;"></i>
-                        <span>Intervention</span>
-                        <span style="font-size: 0.7rem;"></span>
-                    </div>
-                </div>
-                <!-- Galerie image 4 - à ajouter plus tard -->
-                <div class="gallery-item">
-                    <img src="" alt="Solution industrielle" style="display:none;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="img-placeholder" style="display:flex;">
-                        <i class="fas fa-industry" style="font-size: 3rem; margin-bottom: 10px;"></i>
-                        <span>Industrie</span>
-                        <span style="font-size: 0.7rem;"></span>
+                    <div style="background: linear-gradient(135deg, #005792, #00A8E8); width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold;">
+                        <i class="fas fa-industry" style="font-size: 3rem; margin-right: 10px;"></i> Solution industrielle
                     </div>
                 </div>
             </div>
